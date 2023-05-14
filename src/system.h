@@ -15,7 +15,10 @@ public:
 private:
     int startup();
 public:
-    static System* instance();
+    static const System& instance();
+public:
+    System();
+    ~System();
 public:
     const char* name();
     const char* version();
@@ -23,7 +26,14 @@ public:
     const char* dynamicLibext();
 public:
     Kernel* kernel();
+    int pid();
+    int tid();
+    int shell(const char* shell,...);
 };
+
+// SYSCALL & HOOK
+// NETWORK
+// FS & EVENT
 namespaceEnd
 EXTERN_C_END
 #endif
