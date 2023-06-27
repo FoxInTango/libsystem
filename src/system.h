@@ -1,6 +1,5 @@
 #ifndef _SYSTEM_H_foxintango
 #define _SYSTEM_H_foxintango
-
 #include <libkernel/libkernel.h>
 #include <libstring/libstring.h>
 #include <libcpp/libcpp.h>
