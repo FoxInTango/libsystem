@@ -1,17 +1,13 @@
 #ifndef _SYSTEM_H_foxintango
 #define _SYSTEM_H_foxintango
 
+#include <libkernel/libkernel.h>
+#include <libstring/libstring.h>
 #include <libcpp/libcpp.h>
 
 EXTERN_C_BEGIN
 namespaceBegin(foxintango)
 class foxintangoAPI System {
-public:
-    class foxintangoAPI Kernel {
-    public:
-        const char* name();
-        const char* version();
-    };
 private:
     int startup();
 public:
@@ -20,15 +16,20 @@ public:
     System();
     ~System();
 public:
-    const char* name();
-    const char* version();
-    const char* staticLibext();
-    const char* dynamicLibext();
+    String name();
+    String version();
+    String staticLibext();
+    String dynamicLibext();
 public:
     Kernel* kernel();
     int pid();
     int tid();
+    int uid();
+    int gid();
     int shell(const char* shell,...);
+    String user();
+    String group();
+    String currentPath();//getcwd
 };
 
 // SYSCALL & HOOK
